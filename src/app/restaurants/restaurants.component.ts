@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Restaurant } from 'app/restaurants/restaurant/restaurant.model';
 import { RestaurantsService } from 'app/restaurants/restaurants.service';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'mt-restaurants',
