@@ -7,6 +7,10 @@ export class OrderService {
 
   constructor(private cartService: ShoppingCartService) { }
 
+  public itemsValue(): number {
+    return this.cartService.total();
+  }
+
   public cartItems() {
     return this.cartService.items;
   }
@@ -15,7 +19,7 @@ export class OrderService {
     this.cartService.increaseQty(item);
   }
 
-  public decreaseQty(item: CartItem):void {
+  public decreaseQty(item: CartItem): void {
     this.cartService.decreaseQty(item);
   }
 
