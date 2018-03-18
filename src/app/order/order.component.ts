@@ -21,7 +21,7 @@ export class OrderComponent implements OnInit {
     { label: 'Dinheiro', value: 'MON' },
     { label: 'Cartão de Débito', value: 'DEB' },
     { label: 'Cartão Refeição', value: 'REF' }
-  ]
+  ];
 
   public delivery: number;
 
@@ -42,14 +42,14 @@ export class OrderComponent implements OnInit {
     }, { validator: OrderComponent.equalsTo });
   }
 
-  public static equalsTo(group: AbstractControl): { [key: string]: boolean } {
+  static equalsTo(group: AbstractControl): { [key: string]: boolean } {
     const email = group.get('email');
     const emailConfirmation = group.get('emailConfirmation');
     if (!email || !emailConfirmation) {
       return undefined;
     }
     if (email.value !== emailConfirmation.value) {
-      return { emailsNotMatch: true }
+      return { emailsNotMatch: true };
     }
     return undefined;
   }
