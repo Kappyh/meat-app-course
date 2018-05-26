@@ -7,7 +7,7 @@ export class NotificationService {
 
   constructor() { }
 
-  public notify(message: string){
+  public notify(message: string) {
     this.notifier.emit(message);
   }
 
