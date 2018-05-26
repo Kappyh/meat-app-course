@@ -24,6 +24,7 @@ export class OrderComponent implements OnInit {
   ];
 
   public delivery: number;
+  public orderId: string;
 
   constructor(private orderService: OrderService,
     private router: Router,
@@ -74,14 +75,21 @@ export class OrderComponent implements OnInit {
     this.orderService.remove(item);
   }
 
+  public isOrderCompleted(): boolean {
+    return this.orderId !== undefined;
+  }
+
   public checkOrder(order: Order) {
     order.orderItems = this.cartItems().map(
       (item: CartItem) => new OrderItem(item.quantity, item.menuItem.id));
-    this.orderService.checkOrder(order).subscribe((orderID: string) => {
-      this.router.navigate(['/order-summary']);
-      this.orderService.clear();
-    });
-    console.log(order);
+    this.orderService.checkOrder(order)
+      .do((orderId: string) => {
+        this.orderId = orderId;
+      })
+      .subscribe((orderID: string) => {
+        this.router.navigate(['/order-summary']);
+        this.orderService.clear();
+      });
   }
 
 
