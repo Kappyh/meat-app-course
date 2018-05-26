@@ -18,9 +18,9 @@ import 'core-js/es6/reflect';
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';
 
-/* Import internacionalização para uso de pipes currency por exemplo */
-import 'intl';
-import 'intl/locale-data/jsonp/pt-BR.js';
+/* Import internacionalização para uso de pipes currency por exemplo(CAIU NA VERSAO 6) */
+// import 'intl';
+// import 'intl/locale-data/jsonp/pt-BR.js';
 
 /* Import para uso de animations em browsers mais antigos */
 import 'web-animations-js/web-animations.min.js';
