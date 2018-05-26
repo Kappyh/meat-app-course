@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { MEAT_API } from '../app.api';
-import { ErrorHandler } from 'app/app.error-hadler';
 import { Restaurant } from 'app/restaurants/restaurant/restaurant.model';
 import { MenuItem } from '../restaurant-detail/menu-item/menu-item.model';
 
